@@ -8,7 +8,7 @@ GPX 轨迹 → 多种地图投影 → SVG + PNG → ZIP
 v1.0 内置：
   1. Web 墨卡托 (Web Mercator / EPSG:3857)
   2. 等距圆柱 (Equirectangular / Plate Carrée)
-  3. 中国 1963 等差分纬线多圆锥投影
+  3. 等差分纬线多圆锥投影
   4. 双标准纬线等积圆锥投影（中国）
 
 仅使用 Python 标准库。
@@ -144,7 +144,7 @@ class AlbersChina(Projection):
         return x, y
 
 
-# ---- 中国 1963 等差分纬线多圆锥投影 ----
+# ---- 等差分纬线多圆锥投影 ----
 #
 # 1963 方案的样条函数和投影常数参考：
 # fanfanpa/Latitudinally-Equal-Differential-Polyconic-Projection
@@ -355,7 +355,7 @@ def _xn_spline_1963(phi: float) -> float:
 
 
 class Chinese1963(Projection):
-    name = "中国 1963 等差分纬线多圆锥投影"
+    name = "等差分纬线多圆锥投影"
     slug = "chinese1963"
 
     CENTRAL_MERIDIAN = 150.0
